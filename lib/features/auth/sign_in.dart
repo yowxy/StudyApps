@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:skill_loop/features/auth/sign_in.dart';
+import 'package:skill_loop/features/auth/sign_up.dart';
 import 'package:skill_loop/features/splash/splash_screen.dart';
 import 'package:skill_loop/features/widget/button.dart';
 import 'package:skill_loop/features/widget/buttonInput.dart';
 import 'package:skill_loop/shared/theme.dart';
 
-class SignUp extends StatelessWidget {
+class SignIn extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -26,8 +26,8 @@ class SignUp extends StatelessWidget {
                     MaterialPageRoute(
                   builder: (context) =>
                              SplashScreen(),
-                    ),
-                 ); 
+                      ),
+                    ); 
            }
         ),
       ),
@@ -38,7 +38,7 @@ class SignUp extends StatelessWidget {
           children: [
             const SizedBox(height: 50),
            Center(
-            child:  Text('Sign Up',
+            child:  Text('Sign In',
             style: blackTextStyle.copyWith(
               fontSize:30,
               fontWeight: semibold,
@@ -105,7 +105,6 @@ class SignUp extends StatelessWidget {
             ),
             const SizedBox(height: 10,),
             
-
             CustomButtonForm(
               height: 54, 
               width: double.infinity, 
@@ -114,33 +113,32 @@ class SignUp extends StatelessWidget {
               onPressed: () => Navigator.push(
                 context, MaterialPageRoute(
                 builder: (context) => 
-                SignIn()) ), 
+                SplashScreen()) ), 
               color: orange,
               ),
-
             const SizedBox(height: 13),
             RichText(textAlign: TextAlign.left,
             text: TextSpan(
-              text: 'Already have an account?',style: blackTextStyle.copyWith(
+              text: 'Didnt Havent account?',style: blackTextStyle.copyWith(
                 fontWeight: reguler,
                 fontSize: 13,
               ),
               children: [
                  TextSpan(
-                    text: ' Sign In',
+                    text: 'Sign Up',
                     style: greenTextStyle.copyWith(
                       fontWeight: semibold
                     ),
-                recognizer: TapGestureRecognizer()
+                       recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignIn(),
+                      builder: (context) => SignUp(),
                     ),
                   );
                 },
-                ),
+                  ),
                   
               ]
 
