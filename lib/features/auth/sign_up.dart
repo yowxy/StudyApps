@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:skill_loop/features/auth/sign_in.dart';
+import 'package:skill_loop/features/home/home.dart';
 import 'package:skill_loop/features/splash/splash_screen.dart';
 import 'package:skill_loop/features/widget/button.dart';
 import 'package:skill_loop/features/widget/buttonInput.dart';
@@ -114,7 +115,7 @@ class SignUp extends StatelessWidget {
               onPressed: () => Navigator.push(
                 context, MaterialPageRoute(
                 builder: (context) => 
-                SignIn()) ), 
+                HomeScreen()) ), 
               color: orange,
               ),
 

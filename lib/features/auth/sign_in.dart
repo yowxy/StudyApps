@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:skill_loop/features/auth/sign_up.dart';
+import 'package:skill_loop/features/home/home.dart';
 import 'package:skill_loop/features/splash/splash_screen.dart';
 import 'package:skill_loop/features/widget/button.dart';
 import 'package:skill_loop/features/widget/buttonInput.dart';
@@ -106,14 +107,14 @@ class SignIn extends StatelessWidget {
             const SizedBox(height: 10,),
             
             CustomButtonForm(
-              height: 54, 
+              height: 54,   
               width: double.infinity, 
               title: 'Sign-Up', 
               
               onPressed: () => Navigator.push(
                 context, MaterialPageRoute(
                 builder: (context) => 
-                SplashScreen()) ), 
+                HomeScreen ()) ), 
               color: orange,
               ),
             const SizedBox(height: 13),
