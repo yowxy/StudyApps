@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:skill_loop/features/auth/sign_up.dart';
@@ -10,7 +12,6 @@ import 'package:skill_loop/shared/theme.dart';
 class SignIn extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +110,7 @@ class SignIn extends StatelessWidget {
             CustomButtonForm(
               height: 54,   
               width: double.infinity, 
-              title: 'Sign-Up', 
+              title: 'Sign-In', 
               
               onPressed: () => Navigator.push(
                 context, MaterialPageRoute(
