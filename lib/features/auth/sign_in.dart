@@ -126,23 +126,18 @@ class SignIn extends StatelessWidget {
                 fontSize: 13,
               ),
               children: [
-                 TextSpan(
-                    text: 'Sign Up',
-                    style: greenTextStyle.copyWith(
-                      fontWeight: semibold
-                    ),
-                       recognizer: TapGestureRecognizer()
-                ..onTap = () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SignUp(),
-                    ),
-                  );
-                },
+                  TextSpan(
+                    text: ' Sign Up',
+                    style: greenTextStyle.copyWith(fontWeight: semibold),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
+                        );
+                      },
                   ),
-                  
-              ]
+                ],
 
               ),
             )

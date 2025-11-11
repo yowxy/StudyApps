@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_loop/features/profile/profile.dart';
 import 'package:skill_loop/shared/theme.dart';
 
 class BottomBar extends StatelessWidget {
@@ -46,7 +47,14 @@ class BottomBar extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.person),
             color: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfilePages(),
+                    ),
+                  );
+            },
           ),
         ],
       ),

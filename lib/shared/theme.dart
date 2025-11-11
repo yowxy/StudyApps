@@ -25,6 +25,7 @@ Color blueColor = const Color(0xff0067A9);
 Color blueLightColor = const Color(0xff4F9DFF);
 Color purple = const Color(0xffB38DFF);
 Color orange = const Color (0xffFFC85A);
+Color red = const Color(0xffFF6F61);
 
 
 

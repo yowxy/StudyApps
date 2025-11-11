@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:skill_loop/features/home/widget/bottom_bar.dart';
 import 'package:skill_loop/features/home/widget/list_page.dart';
 import 'package:skill_loop/features/splash/splash_screen.dart';
+import 'package:skill_loop/features/widget/name.dart';
 import 'package:skill_loop/shared/theme.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,6 +11,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -36,6 +39,14 @@ class HomeScreen extends StatelessWidget {
               fontSize: 24,
             ),
           ),
+
+        
+           Text(
+              // kalau user != null, tampilkan email-nya
+              user != null ? user.email ?? "Tidak ada email" : "Belum login",
+              style: const TextStyle(fontSize: 18, color: Colors.grey),
+            ),
+
           const SizedBox(height: 4),
           RichText(
             text: TextSpan(
@@ -58,6 +69,14 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16,),
+          ComponentName(
+            color: blueLightColor, 
+            width: double.infinity, 
+            height: 100, 
+c            ),
+
+            const SizedBox(height: 20,),
+
           ListPage(
             height: 168, 
             width: double.infinity, 
@@ -72,19 +91,7 @@ class HomeScreen extends StatelessWidget {
             text: 'Php for backend development'
           ),
           const SizedBox(height: 20,),
-          ListPage(
-            height: 168, 
-            width: double.infinity, 
-            color: greenColorTosca, 
-            text: 'Php for backend development'
-          ),
-          const SizedBox(height: 10,),
-          ListPage(
-            height: 168, 
-            width: double.infinity, 
-            color: greenColorTosca, 
-            text: 'Php for backend development'
-          ),
+    
         ],
       ),
       bottomNavigationBar: const BottomBar(), 

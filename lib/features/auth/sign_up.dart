@@ -54,6 +54,7 @@ class SignUp extends StatelessWidget {
           },
         ),
       ),
+      
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 20),
