@@ -54,16 +54,21 @@ class ProfilePages extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 20,),
           ComponentName(
             color: red, 
             width: double.infinity, 
             height: 100, 
             name:user != null ? user.email ?? "Tidak ada email" : "Belum login",
-
-          )
+          ),
+          const SizedBox(height: 10,),
+          Text('Badges', style: blackTextStyle.copyWith(
+            fontWeight: semibold,
+            fontSize: 24,
+          ),)
         ],
       ),
-      bottomNavigationBar: const BottomBar(), 
+      bottomNavigationBar: const BottomBar(currentIndex: 4,), 
 
     );
   }

@@ -73,7 +73,8 @@ class HomeScreen extends StatelessWidget {
             color: blueLightColor, 
             width: double.infinity, 
             height: 100, 
-c            ),
+            name: user != null ? user.email ?? "Tidak ada email" : "Belum login",
+          ),
 
             const SizedBox(height: 20,),
 
@@ -94,7 +95,7 @@ c            ),
     
         ],
       ),
-      bottomNavigationBar: const BottomBar(), 
+      bottomNavigationBar: const BottomBar(currentIndex: 0,), 
       
     );
   }

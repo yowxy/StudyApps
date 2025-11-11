@@ -1,34 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:skill_loop/features/home/home.dart';
 import 'package:skill_loop/features/profile/profile.dart';
 import 'package:skill_loop/shared/theme.dart';
 
 class BottomBar extends StatelessWidget {
-  const BottomBar({super.key});
+  final int currentIndex; // untuk tahu tab mana yang aktif
+
+  const BottomBar({
+    super.key,
+    required this.currentIndex,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-      decoration: BoxDecoration(
-        color: const Color(0xFF4EE0B5), // Warna hijau toska
+      decoration: const BoxDecoration(
+        color: Color(0xFF4EE0B5),
         borderRadius: BorderRadius.only(
-           topLeft: Radius.circular(30),
-           topRight: Radius.circular(30),
-        )
-      
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
             icon: const Icon(Icons.home),
-            color: Colors.green.shade900,
-            onPressed: () {},
+            color: currentIndex == 0 ? Colors.green.shade900 : Colors.white,
+            onPressed: () {
+              if (currentIndex != 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              }
+            },
           ),
           IconButton(
             icon: const Icon(Icons.access_time),
-            color: Colors.white,
+            color: currentIndex == 1 ? Colors.green.shade900 : Colors.white,
             onPressed: () {},
           ),
           Container(
@@ -37,23 +48,23 @@ class BottomBar extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             padding: const EdgeInsets.all(8),
-            child:  Icon(Icons.add, color: greenColorTosca),
+            child: Icon(Icons.add, color: greenColorTosca),
           ),
           IconButton(
             icon: const Icon(Icons.message),
-            color: Colors.white,
+            color: currentIndex == 3 ? Colors.green.shade900 : Colors.white,
             onPressed: () {},
           ),
           IconButton(
             icon: const Icon(Icons.person),
-            color: Colors.white,
+            color: currentIndex == 4 ? Colors.green.shade900 : Colors.white,
             onPressed: () {
-              Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ProfilePages(),
-                    ),
-                  );
+              if (currentIndex != 4) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProfilePages()),
+                );
+              }
             },
           ),
         ],
