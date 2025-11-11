@@ -1,7 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:skill_loop/features/home/widget/bottom_bar.dart';
+import 'package:skill_loop/features/post/create_post.dart';
+import 'package:skill_loop/features/profile/widget/shape_profile.dart';
 import 'package:skill_loop/features/splash/splash_screen.dart';
+import 'package:skill_loop/features/widget/button.dart';
 import 'package:skill_loop/features/widget/name.dart';
 import 'package:skill_loop/shared/theme.dart';
 
@@ -12,7 +15,7 @@ class ProfilePages extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
         centerTitle: true,
@@ -29,12 +32,12 @@ class ProfilePages extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          Text('Profile',style: blackTextStyle.copyWith(
-            fontWeight: semibold,
-            fontSize: 24
+          Text(
+            'Profile',
+            style: blackTextStyle.copyWith(fontWeight: semibold, fontSize: 24),
           ),
-        ),
-        RichText(
+
+          RichText(
             text: TextSpan(
               children: [
                 TextSpan(
@@ -54,22 +57,55 @@ class ProfilePages extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(height: 20),
           ComponentName(
-            color: red, 
-            width: double.infinity, 
-            height: 100, 
-            name:user != null ? user.email ?? "Tidak ada email" : "Belum login",
+            color: red,
+            width: double.infinity,
+            height: 100,
+            name: user != null
+                ? user.email ?? "Tidak ada email"
+                : "Belum login",
           ),
-          const SizedBox(height: 10,),
-          Text('Badges', style: blackTextStyle.copyWith(
-            fontWeight: semibold,
-            fontSize: 24,
-          ),)
+          const SizedBox(height: 10),
+          Text(
+            'Badgess',
+            style: blackTextStyle.copyWith(fontWeight: semibold, fontSize: 24),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              ShapeBadges(
+                height: 100,
+                width: 120,
+                color: blueLightColor,
+                imagePath: 'assets/icon/medal_solid.png',
+                imageScale: 2,
+              ),
+              const SizedBox(width: 4),
+              ShapeBadges(
+                height: 96,
+                width: 244,
+                color: blueLightColor,
+                name: 'eaeaea',
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          CustomButtonForm(
+            height: 54,
+            width: double.infinity,
+            title: 'Create Post ',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CreatePost()),
+              );
+            },
+            color: orange,
+          ),
         ],
       ),
-      bottomNavigationBar: const BottomBar(currentIndex: 4,), 
-
+      bottomNavigationBar: const BottomBar(currentIndex: 4),
     );
   }
 }

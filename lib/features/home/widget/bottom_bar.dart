@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:skill_loop/features/home/home.dart';
+import 'package:skill_loop/features/post/create_post.dart';
 import 'package:skill_loop/features/profile/profile.dart';
 import 'package:skill_loop/shared/theme.dart';
 
 class BottomBar extends StatelessWidget {
   final int currentIndex; // untuk tahu tab mana yang aktif
 
-  const BottomBar({
-    super.key,
-    required this.currentIndex,
-  });
+  const BottomBar({super.key, required this.currentIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +40,24 @@ class BottomBar extends StatelessWidget {
             color: currentIndex == 1 ? Colors.green.shade900 : Colors.white,
             onPressed: () {},
           ),
-          Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
+
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const CreatePost()),
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: currentIndex == 2 ? Colors.green.shade900 : Colors.white,
+                shape: BoxShape.circle,
+              ),
+              padding: const EdgeInsets.all(8),
+              child: Icon(Icons.add, color: greenColorTosca),
             ),
-            padding: const EdgeInsets.all(8),
-            child: Icon(Icons.add, color: greenColorTosca),
           ),
+
           IconButton(
             icon: const Icon(Icons.message),
             color: currentIndex == 3 ? Colors.green.shade900 : Colors.white,
