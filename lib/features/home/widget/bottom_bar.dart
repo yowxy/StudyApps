@@ -45,7 +45,7 @@ class BottomBar extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const CreatePost()),
+                MaterialPageRoute(builder: (context) => CreatePost()),
               );
             },
             child: Container(

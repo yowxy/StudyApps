@@ -39,8 +39,6 @@ class HomeScreen extends StatelessWidget {
               fontSize: 24,
             ),
           ),
-
-        
            Text(
               // kalau user != null, tampilkan email-nya
               user != null ? user.email ?? "Tidak ada email" : "Belum login",
