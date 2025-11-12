@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_loop/features/chat/chat.dart';
 import 'package:skill_loop/features/home/home.dart';
 import 'package:skill_loop/features/post/create_post.dart';
 import 'package:skill_loop/features/profile/profile.dart';
@@ -61,7 +62,14 @@ class BottomBar extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.message),
             color: currentIndex == 3 ? Colors.green.shade900 : Colors.white,
-            onPressed: () {},
+            onPressed: () {
+               if (currentIndex != 3) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ChatPage()),
+                );
+              }
+            },
           ),
           IconButton(
             icon: const Icon(Icons.person),
