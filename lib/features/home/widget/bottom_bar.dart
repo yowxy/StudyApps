@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_loop/features/badges/badges.dart';
 import 'package:skill_loop/features/chat/chat.dart';
 import 'package:skill_loop/features/home/home.dart';
 import 'package:skill_loop/features/post/create_post.dart';
@@ -39,7 +40,11 @@ class BottomBar extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.access_time),
             color: currentIndex == 1 ? Colors.green.shade900 : Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, 
+              MaterialPageRoute(builder: (context) => Badges())
+              );
+            },
           ),
 
           GestureDetector(

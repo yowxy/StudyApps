@@ -91,12 +91,12 @@ class _ChatPageState extends State<ChatPage> {
           ButtonNext(
             name: 'Earn More Badges', 
             width: double.infinity, 
-            height: 52, 
+            height: 90, 
             color: orange, 
             onPressed: () {
             Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Badges()),
+                MaterialPageRoute(builder: (context) => const Badges()),
               );
             }
             )
