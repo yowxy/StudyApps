@@ -22,11 +22,13 @@ class BottomBar extends StatelessWidget {
           topRight: Radius.circular(30),
         ),
       ),
+      
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
             icon: const Icon(Icons.home),
+            iconSize: 32,
             color: currentIndex == 0 ? Colors.green.shade900 : Colors.white,
             onPressed: () {
               if (currentIndex != 0) {
@@ -37,8 +39,10 @@ class BottomBar extends StatelessWidget {
               }
             },
           ),
+
           IconButton(
             icon: const Icon(Icons.access_time),
+            iconSize: 32,
             color: currentIndex == 1 ? Colors.green.shade900 : Colors.white,
             onPressed: () {
               Navigator.push(context, 
@@ -47,7 +51,10 @@ class BottomBar extends StatelessWidget {
             },
           ),
 
+          
+
           GestureDetector(
+            
             onTap: () {
               Navigator.push(
                 context,
@@ -65,6 +72,8 @@ class BottomBar extends StatelessWidget {
           ),
 
           IconButton(
+          iconSize: 32,
+
             icon: const Icon(Icons.message),
             color: currentIndex == 3 ? Colors.green.shade900 : Colors.white,
             onPressed: () {
@@ -77,6 +86,8 @@ class BottomBar extends StatelessWidget {
             },
           ),
           IconButton(
+          iconSize: 32,
+
             icon: const Icon(Icons.person),
             color: currentIndex == 4 ? Colors.green.shade900 : Colors.white,
             onPressed: () {

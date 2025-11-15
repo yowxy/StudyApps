@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skill_loop/features/badges/badges.dart';
+import 'package:skill_loop/features/chat/detail_chat/detail_chat.dart';
 import 'package:skill_loop/features/chat/widget/bubble_chat.dart';
 import 'package:skill_loop/features/chat/widget/button.dart';
 import 'package:skill_loop/features/home/home.dart';
@@ -43,6 +44,7 @@ class _ChatPageState extends State<ChatPage> {
               fontSize: 24,
             ),
           ),
+          
           const SizedBox(height: 3),
           RichText(
             text: TextSpan(
@@ -66,12 +68,17 @@ class _ChatPageState extends State<ChatPage> {
           ),
           const SizedBox(height: 20),
 
-          // 🔹 Chat bubbles
           BubbleChat(
             name: 'Iklil',
             message: 'Can you help me?',
             time: '23:46',
             notificationCount: 1,
+            onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailChat()),
+              );
+            },
           ),
           const SizedBox(height: 20),
           BubbleChat(
@@ -79,6 +86,12 @@ class _ChatPageState extends State<ChatPage> {
             message: 'Sure, what’s up?',
             time: '23:47',
             notificationCount: 0,
+            onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailChat()),
+              );
+            },
           ),
           const SizedBox(height: 20),
           BubbleChat(
@@ -86,6 +99,12 @@ class _ChatPageState extends State<ChatPage> {
             message: 'Okay, let’s go!',
             time: '23:50',
             notificationCount: 3,
+            onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailChat()),
+              );
+            },
           ),
           const SizedBox(height: 30,),
           ButtonNext(
